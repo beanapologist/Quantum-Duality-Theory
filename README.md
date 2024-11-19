@@ -28,4 +28,4 @@ We welcome contributions! Please see the **How to Contribute** section in **cont
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Contact:
-For inquiries, reach out to [sarmarin95@gmail.com].
+For inquiries, reach out to (https://x.com/beanapologist).
