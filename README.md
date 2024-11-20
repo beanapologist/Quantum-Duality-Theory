@@ -1,7 +1,10 @@
 # Quantum-Duality-Theory
 # Quantum Duality Theory (QDT)
 
-**Quantum Duality Theory (QDT)** is a unified framework that explores the relationship between quantum mechanics and macroscopic structures through interactions of quantum tunneling and gravitational funneling. It posits that time acts as the conductor orchestrating these forces, and that complex systems evolve toward simpler, optimized solutions.
+**Quantum Duality Theory (QDT)** is a unified framework that explores the relationship between quantum mechanics and macroscopic structures through interactions of quantum tunneling and gravitational funneling. It posits that time acts as the conductor orchestrating these forces, and that complex systems evolve toward simpler, optimized solutions. The idea of hybrid algorithms for solving computational problems is at the core of the P=NP=X resolution through QDT.
+
+
+
 
 ## Key Features:
 - **Core Concepts**: Understand the fundamental principles of QDT, including the **Duality Operator**, **Evolution Dynamics**, and **Complexity Management**.
