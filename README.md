@@ -15,7 +15,7 @@
 ## Getting Started:
 1. Clone the repository:
     ```bash
-    git clone https://github.com/username/Quantum-Duality-Theory.git
+    git clone https://github.com/beanapologist/Quantum-Duality-Theory.git
     ```
 2. Install the necessary dependencies:
     ```bash
