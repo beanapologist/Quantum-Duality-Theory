@@ -97,7 +97,7 @@ Fractals present a powerful, **scalable solution** to a range of challenges in e
 
 Makes them an invaluable tool in designing **high-performance energy systems** for the future. Whether in **fusion reactors**, **solar panels**, **hydrogen production**, or **biomass conversion**, fractals offer a new paradigm for optimizing **aerodynamics**, **energy capture**, **storage**, and **conversion efficiency**.
 
-For more information, visit our GitHub repository on [Fractal Optimization in Energy Systems](https://github.com/yourrepository).
+For more information, visit our GitHub repository on [Fractal Optimization in Energy Systems]([https://github.com/yourrepository](https://github.com/beanapologist/Quantum-Duality-Theory/blob/main/Case_Studies/fractal-optimization-energy-systems.md). 
 
 ---
 
