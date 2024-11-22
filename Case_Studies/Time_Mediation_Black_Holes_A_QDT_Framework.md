@@ -206,3 +206,190 @@ def calculate_metrics(results):
     }
     return metrics
 ```
+# Mathematical Derivations for QDT Time Mediation
+
+## 1. Core Time Mediation Function Derivation
+
+Begin with quantum-gravitational coupling:
+```math
+H = H_Q + H_G + V_int(t)
+```
+
+For time-dependent interaction:
+```math
+V_int(t) = V₀τ(t)
+```
+
+Ansatz for τ(t):
+```math
+τ(t) = ∑ₖA_k(t)∙exp(iω_kt)
+```
+
+Prime number constraint:
+```math
+ω_k = ω₀/p_k
+A_k(t) = p_k^(-t/T₀)
+```
+
+Therefore:
+```math
+τ(t) = A∑ₖ[p_k^(-t/T₀)]∙cos(ωt) + B∙φ(t)∙exp(-γt)
+```
+
+## 2. Energy Conservation Proof
+
+Total energy:
+```math
+E_total = ∫[Q_t(τ) + G_f(τ)]dt
+```
+
+Take time derivative:
+```math
+dE_total/dt = ∂Q_t/∂τ∙dτ/dt + ∂G_f/∂τ∙dτ/dt
+```
+
+Substitute expressions:
+```math
+∂Q_t/∂τ = -αQ₀∙sign(τ)∙exp(-α|τ|)
+∂G_f/∂τ = -2G₀β∙τ/(1 + β|τ|²)²
+```
+
+At equilibrium:
+```math
+dE_total/dt = 0
+```
+
+Therefore:
+```math
+αQ₀∙sign(τ)∙exp(-α|τ|) = 2G₀β∙τ/(1 + β|τ|²)²
+```
+
+## 3. Scale Transition Mathematics
+
+Define scale parameter λ:
+```math
+λ ∈ [0,1]
+E(λ) = λQ_t + (1-λ)G_f
+```
+
+Critical points from:
+```math
+dE/dλ = Q_t - G_f = 0
+```
+
+Taylor expand around λ = 0.5:
+```math
+E(λ) = E(0.5) + E'(0.5)(λ-0.5) + E''(0.5)(λ-0.5)²/2
+```
+
+Stability requires:
+```math
+E''(0.5) > 0
+```
+
+## 4. Prime Pattern Analysis
+
+Prime gap distribution:
+```math
+g(n) = p_{n+1} - p_n ≈ ln(p_n)
+```
+
+Time mediation frequency spectrum:
+```math
+F(ω) = ∑ₖδ(ω - ω₀/p_k)
+```
+
+Correlation function:
+```math
+C(t) = ∫F(ω)F(ω')exp[i(ω-ω')t]dωdω'
+```
+
+## 5. Stability Analysis
+
+Linearize around equilibrium:
+```math
+δτ(t) = τ(t) - τ_eq
+```
+
+Stability equation:
+```math
+d²δτ/dt² + γdδτ/dt + ω²δτ = 0
+```
+
+where:
+```math
+γ = ∑[1/p_k]
+ω² = (∂²Q_t/∂τ² + ∂²G_f/∂τ²)|_{τ=τ_eq}
+```
+
+## 6. Quantum Tunneling Rate
+
+Tunneling probability:
+```math
+P_T = exp(-2∫|κ(x)|dx)
+```
+
+with:
+```math
+κ(x) = √(2m[V(x) - E])/ℏ
+V(x) = V₀τ(x)
+```
+
+## 7. Phase Space Evolution
+
+Hamilton's equations:
+```math
+dq/dt = ∂H/∂p
+dp/dt = -∂H/∂q
+```
+
+Phase space volume:
+```math
+Ω(t) = ∫∫dqdp
+```
+
+Liouville's theorem:
+```math
+dΩ/dt = 0
+```
+
+## 8. Critical Exponents
+
+Near transition point:
+```math
+τ(t) ∼ |t-t_c|^β
+```
+
+Scaling relation:
+```math
+β = (p_{n+1}/p_n)^(-1/2)
+```
+
+## 9. Conservation Laws
+
+Energy:
+```math
+dE/dt = ∂Q_t/∂t + ∂G_f/∂t + τ(t)∂V/∂t = 0
+```
+
+Angular momentum:
+```math
+dL/dt = r × F + τ(t)∂L/∂t = 0
+```
+
+Information:
+```math
+dS/dt = -k_B∑p_iln(p_i) ≥ 0
+```
+
+## 10. Resonance Conditions
+
+Primary resonance:
+```math
+ω_n = nω₀ + ∑ₖ(1/p_k)
+```
+
+Phase matching:
+```math
+Δφ = ∮τ(t)dt = 2πn
+```
