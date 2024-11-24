@@ -38,10 +38,12 @@ The theory is built upon three essential components that form the foundation of 
 The theory employs three primary constants, each serving a specific role in the mathematical framework:
 
 ```
-α (Alpha) = 0.45    # Energy growth rate controller
-β (Beta)  = 0.25    # Entropy-energy modulator
-γ (Gamma) = 0.35    # Entropy growth influence
-Λ         = 1.2     # Cosmological constant
+α (Alpha) = 0.52    # Energy growth rate controller/Prime Recursion Factor
+β (Beta)  = 0.31    # Entropy-energy modulator/Fractal Recursion Factor
+γ (Gamma) = 0.45    # Entropy growth influence/Feedback Decay Rate
+δ (Delta) = 0.45    # Damping Rate
+Λ         = 1.2     # CMB Influence
+λ (Lamda) = 0.867   # Coupling Constant
 ```
 
 ## 4. Mathematical Framework
@@ -111,24 +113,18 @@ Total energy calculation across components:
 Total Energy = ∑[i=1 to N] Eᵢ
 ```
 
-### 7.2 Component Distribution Table
-
-| Component    | Role                              | Body Composition | Energy Use |
-|-------------|-----------------------------------|------------------|------------|
-| Dark Energy | Neural energy, bioelectric potential| ~10%            | ~20%       |
-| Dark Matter | Connective tissue, scaffolding     | ~60%            | ~10%       |
-| Matter      | Organs, tissues, biological systems| ~30%            | ~70%       |
-
 ## 8. Reference Tables
 
 ### 8.1 Constant Summary Table
 
 | Constant | Value | Function |
 |----------|--------|----------|
-| α (Alpha) | 0.45 | Controls energy growth rate |
-| β (Beta) | 0.25 | Modulates entropy-energy relationship |
-| γ (Gamma) | 0.35 | Influences entropy growth |
-| Λ (Lambda) | 1.2 | Cosmological constant |
+| α (Alpha) | 0.42 | Controls energy growth rate |
+| β (Beta) | 0.31 | Modulates entropy-energy relationship |
+| γ (Gamma) | 0.45 | Influences entropy growth |
+| Λ | 1.2 | CMB Influence |
+| λ (Lambda) | 0.867 | Influences entropy growth |
+| δ (Delta) | .45 | Damping Rate |
 
 ### 8.2 Validation Parameters
 
