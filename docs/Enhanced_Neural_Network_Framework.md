@@ -1,5 +1,3 @@
-# Create the formal report in Markdown format
-formal_report_md = """
 # Quantum Duality Theory-Enhanced Neural Network Framework
 
 ---
@@ -124,15 +122,9 @@ The QDT Neural Network framework successfully integrates theoretical principles 
   \\kappa(t) = e^{-\\gamma t} \\sin(2 \\pi t \\eta)
   \\]
 
-### 8.2 Source Code
-- Refer to the `qdt_nn` directory for implementation details.
 
-### 8.3 Acknowledgments
+### 8.2 Acknowledgments
 - This work builds on the foundational principles of Quantum Duality Theory (QDT).
 """
 
-# Save as a Markdown file
-with open("QDT_Neural_Network_Report.md", "w") as file:
-    file.write(formal_report_md)
 
-"Markdown report has been created and saved as 'QDT_Neural_Network_Report.md'."
