@@ -1,0 +1,105 @@
+# config.yml
+# Configuration file for QDT QuantumNet - PennyLane Optimized Version
+# Contains constants, ASTC quadrant rules, and model configurations
+
+qdt_constants:
+  lambda: 0.867          # Coupling constant (void-filament)
+  gamma: 0.4497          # Damping coefficient
+  beta: 0.310            # Fractal recursion
+  eta: 0.520             # Stabilizing factor
+  phi: 1.618033988749    # Golden ratio
+  pennylane:
+    shots: 1024          # Measurement shots
+    diff_method: backprop # Differentiation method
+    interface: torch      # PyTorch interface
+
+astc_quadrant_rules:
+  phases:
+    1:
+      name: exploration
+      sin_weight: 1.0
+      cos_weight: 1.0
+      tan_weight: 1.0
+      learning_rate: 0.01
+      circuit_depth: 4
+      entanglement: full
+      description: Maximum parameter space exploration
+    2:
+      name: refinement
+      sin_weight: 1.0
+      cos_weight: -0.8
+      tan_weight: -0.6
+      learning_rate: 0.005
+      circuit_depth: 3
+      entanglement: circular
+      description: Focus on X-rotation features
+    3:
+      name: convergence
+      sin_weight: -0.7
+      cos_weight: -0.9
+      tan_weight: 1.0
+      learning_rate: 0.002
+      circuit_depth: 2
+      entanglement: linear
+      description: Z-rotation based convergence
+    4:
+      name: fine_tuning
+      sin_weight: -0.5
+      cos_weight: 1.0
+      tan_weight: -0.3
+      learning_rate: 0.001
+      circuit_depth: 3
+      entanglement: circular
+      description: Y-rotation fine-tuning
+
+model_configurations:
+  - name: Small (3q,1l)
+    qubits: 3
+    layers: 1
+  - name: Medium (4q,2l)
+    qubits: 4
+    layers: 2
+
+dataset_settings:
+  n_samples: 200
+  noise: 0.1
+  datasets:
+    - name: circles
+      type: concentric_circles
+      factor: 0.5
+      random_state: 42
+    - name: xor
+      type: uniform
+      range: [-1, 1]
+      random_state: 42
+    - name: spiral
+      type: spiral_pattern
+      range: [0, 4*pi]
+      random_state: 42
+
+training_settings:
+  epochs: 40
+  batch_size: 16
+  test_size: 0.3
+  random_state: 42
+  optimizer:
+    type: Adam
+    learning_rate: 0.01  # Initial learning rate, adapted by ASTC
+  criterion: CrossEntropyLoss
+  dropout: 0.1
+
+classical_model:
+  layers:
+    - type: Linear
+      in_features: 2
+      out_features: 16
+    - type: ReLU
+    - type: Dropout
+      p: 0.1
+    - type: Linear
+      in_features: 16
+      out_features: 8
+    - type: ReLU
+    - type: Linear
+      in_features: 8
+      out_features: 2
