@@ -1,0 +1,166 @@
+<svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="purposeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8B5CF6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#A855F7;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="quantumGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#06B6D4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0891B2;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="strategyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10B981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="valuesGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F59E0B;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#D97706;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <pattern id="quantumPattern" patternUnits="userSpaceOnUse" width="20" height="20">
+      <circle cx="10" cy="10" r="2" fill="#06B6D4" opacity="0.3"/>
+      <circle cx="5" cy="5" r="1" fill="#8B5CF6" opacity="0.4"/>
+      <circle cx="15" cy="15" r="1" fill="#10B981" opacity="0.4"/>
+    </pattern>
+  </defs>
+
+  <!-- Background with quantum field -->
+
+  <rect width="1200" height="800" fill="#0F172A"/>
+  <rect width="1200" height="800" fill="url(#quantumPattern)" opacity="0.1"/>
+
+  <!-- Purpose (Roof) -->
+
+  <polygon points="100,150 1100,150 950,50 250,50" fill="url(#purposeGrad)" stroke="#A855F7" stroke-width="2" filter="url(#glow)"/>
+  <text x="600" y="80" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="18" font-weight="bold">PURPOSE</text>
+  <text x="600" y="105" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14">Why we exist</text>
+  <text x="600" y="125" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12">P=NP=Planet: Quantum-Classical Unity</text>
+
+  <!-- Aspirations and Quests -->
+
+  <rect x="100" y="150" width="1000" height="60" fill="url(#quantumGrad)" stroke="#0891B2" stroke-width="2" opacity="0.9"/>
+  <text x="600" y="175" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="16" font-weight="bold">ASPIRATIONS AND QUESTS</text>
+  <text x="600" y="195" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12">What we solve: Computational complexity → Planetary sustainability</text>
+
+  <!-- Strategy Level -->
+
+  <rect x="100" y="210" width="250" height="120" fill="url(#strategyGrad)" stroke="#059669" stroke-width="2" opacity="0.9"/>
+  <text x="225" y="235" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Structure &amp;</text>
+  <text x="225" y="250" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Governance</text>
+  <text x="225" y="270" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10">Open Source</text>
+  <text x="225" y="285" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10">Collaborative</text>
+  <text x="225" y="300" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10">MIT License</text>
+  <text x="225" y="315" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10">Global Access</text>
+
+  <rect x="350" y="210" width="250" height="120" fill="url(#strategyGrad)" stroke="#059669" stroke-width="2" opacity="0.9"/>
+  <text x="475" y="235" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Experiments &amp;</text>
+  <text x="475" y="250" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Initiatives</text>
+  <text x="475" y="270" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10">QDT Research</text>
+  <text x="475" y="285" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10">BiMMOE Framework</text>
+  <text x="475" y="300" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10">Navier-Stokes</text>
+  <text x="475" y="315" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10">Net-Zero Energy</text>
+
+  <rect x="600" y="210" width="250" height="120" fill="url(#strategyGrad)" stroke="#059669" stroke-width="2" opacity="0.9"/>
+  <text x="725" y="235" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Technologies &amp;</text>
+  <text x="725" y="250" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Capabilities</text>
+  <text x="725" y="270" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10">Quantum Duality</text>
+  <text x="725" y="285" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10">Multi-Modal AI</text>
+  <text x="725" y="300" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10">Fractal Geometry</text>
+  <text x="725" y="315" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10">RIB Algorithms</text>
+
+  <rect x="850" y="210" width="250" height="120" fill="url(#strategyGrad)" stroke="#059669" stroke-width="2" opacity="0.9"/>
+  <text x="975" y="235" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Partnerships &amp;</text>
+  <text x="975" y="250" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Platforms</text>
+  <text x="975" y="270" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10">Quantum Community</text>
+  <text x="975" y="285" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10">Climate Researchers</text>
+  <text x="975" y="300" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10">Energy Specialists</text>
+  <text x="975" y="315" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10">Math Institutions</text>
+
+  <!-- Strategy Header -->
+
+  <rect x="100" y="330" width="1000" height="40" fill="#374151" stroke="#6B7280" stroke-width="2"/>
+  <text x="600" y="355" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="16" font-weight="bold">Strategy: How we win through Quantum-Classical Balance</text>
+
+  <!-- Goals and Rewards Level -->
+
+  <rect x="100" y="370" width="500" height="120" fill="url(#quantumGrad)" stroke="#0891B2" stroke-width="2" opacity="0.9"/>
+  <text x="350" y="395" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">GOALS AND METRICS</text>
+  <text x="350" y="415" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12">What we track</text>
+  <text x="200" y="435" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10">Theoretical:</text>
+  <text x="200" y="450" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="9">• Proof rigor</text>
+  <text x="200" y="465" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="9">• Algorithm efficiency</text>
+  <text x="200" y="480" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="9">• Quantum coherence</text>
+
+<text x="500" y="435" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10">Practical:</text>
+<text x="500" y="450" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="9">• Climate accuracy</text>
+<text x="500" y="465" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="9">• Energy optimization</text>
+<text x="500" y="480" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="9">• Carbon reduction</text>
+
+  <rect x="600" y="370" width="500" height="120" fill="url(#quantumGrad)" stroke="#0891B2" stroke-width="2" opacity="0.9"/>
+  <text x="850" y="395" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">REWARDS AND INCENTIVES</text>
+  <text x="850" y="415" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12">How we inspire/accelerate</text>
+  <text x="750" y="435" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10">Intrinsic:</text>
+  <text x="750" y="450" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="9">• Scientific discovery</text>
+  <text x="750" y="465" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="9">• Planetary impact</text>
+  <text x="750" y="480" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="9">• Open innovation</text>
+
+<text x="950" y="435" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10">Recognition:</text>
+<text x="950" y="450" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="9">• Collaborative credit</text>
+<text x="950" y="465" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="9">• Impact metrics</text>
+<text x="950" y="480" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="9">• Legacy creation</text>
+
+  <!-- Values Foundation -->
+
+  <rect x="100" y="490" width="1000" height="150" fill="url(#valuesGrad)" stroke="#D97706" stroke-width="2" opacity="0.9"/>
+  <text x="600" y="520" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="18" font-weight="bold">VALUES</text>
+  <text x="600" y="540" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14">What we believe/how we behave</text>
+
+  <!-- Values Icons and Text -->
+
+  <circle cx="200" cy="570" r="25" fill="#34D399" opacity="0.8"/>
+  <text x="200" y="575" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="20">🌍</text>
+  <text x="200" y="595" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10">Planetary</text>
+  <text x="200" y="608" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10">Stewardship</text>
+
+  <circle cx="400" cy="570" r="25" fill="#60A5FA" opacity="0.8"/>
+  <text x="400" y="575" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="20">🔬</text>
+  <text x="400" y="595" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10">Scientific</text>
+  <text x="400" y="608" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10">Rigor</text>
+
+  <circle cx="600" cy="570" r="25" fill="#F472B6" opacity="0.8"/>
+  <text x="600" y="575" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="20">🤝</text>
+  <text x="600" y="595" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10">Inclusive</text>
+  <text x="600" y="608" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10">Collaboration</text>
+
+  <circle cx="800" cy="570" r="25" fill="#A78BFA" opacity="0.8"/>
+  <text x="800" y="575" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="20">⚖️</text>
+  <text x="800" y="595" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10">Ethical</text>
+  <text x="800" y="608" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10">Balance</text>
+
+  <circle cx="1000" cy="570" r="25" fill="#FBBF24" opacity="0.8"/>
+  <text x="1000" y="575" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="20">🔄</text>
+  <text x="1000" y="595" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10">Adaptive</text>
+  <text x="1000" y="608" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10">Evolution</text>
+
+  <!-- Quantum Connections -->
+
+  <path d="M 200 50 Q 600 100 1000 50" stroke="#06B6D4" stroke-width="2" fill="none" opacity="0.6" stroke-dasharray="5,5"/>
+  <path d="M 100 400 Q 600 350 1100 400" stroke="#8B5CF6" stroke-width="2" fill="none" opacity="0.6" stroke-dasharray="5,5"/>
+
+  <!-- QDT Equations -->
+
+<text x="50" y="720" fill="#06B6D4" font-family="Arial, sans-serif" font-size="12" font-style="italic">P = NP = X</text>
+<text x="50" y="740" fill="#8B5CF6" font-family="Arial, sans-serif" font-size="10">D(λ) = λT^q + (1-λ)F^g + ξ(λ)I</text>
+<text x="50" y="760" fill="#10B981" font-family="Arial, sans-serif" font-size="10">BiMMOE: Quantum ↔ Classical</text>
+<text x="50" y="780" fill="#F59E0B" font-family="Arial, sans-serif" font-size="10">RIB: Resource ⟷ Information</text>
+
+  <!-- Project Attribution -->
+
+<text x="1150" y="780" text-anchor="end" fill="#6B7280" font-family="Arial, sans-serif" font-size="10">github.com/beanapologist</text>
+</svg>
