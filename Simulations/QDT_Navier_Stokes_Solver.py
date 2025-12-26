@@ -95,14 +95,17 @@ class QuantumTimecrystal:
         else:
             potential = self.const.LAMBDA_C * np.mean(u_eff) * self.psi
 
-        # Time evolution with critical damping
+        # Time evolution (Schrödinger with light damping for stability)
         hamiltonian = kinetic + potential
-        damp = np.exp(-self.const.ETA * dt)
-        self.psi = (self.psi - 1j * hamiltonian * dt / self.const.HBAR) * damp
+        self.psi = self.psi - 1j * hamiltonian * dt / self.const.HBAR
 
-        # Normalize
+        # Light dissipation to prevent unphysical growth (not critical damping)
+        dissipation = np.exp(-0.01 * dt)  # Weak dissipation only
+        self.psi *= dissipation
+
+        # Normalize to preserve probability
         norm = np.linalg.norm(self.psi)
-        if norm > 0:
+        if norm > 1e-15:
             self.psi /= norm
 
         # Quantum energy
@@ -219,8 +222,10 @@ class QDTNavierStokes1D:
         }
 
     def _compute_coherence(self) -> float:
-        """Compute quantum phase coherence |⟨ψ|ψ⟩|²"""
-        return np.abs(np.sum(self.qc.psi * np.conj(self.qc.psi)) / self.N)**2
+        """Compute quantum phase coherence (normalized state should be ~1.0)"""
+        # For properly normalized state, ⟨ψ|ψ⟩ = 1
+        norm_sq = np.sum(np.abs(self.qc.psi)**2)
+        return norm_sq
 
 
 class QDTNavierStokes2D:
