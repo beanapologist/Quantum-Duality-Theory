@@ -4,6 +4,7 @@ import QDTBlackHole.QuantumTunneling
 import QDTBlackHole.GravitationalFunneling
 import QDTBlackHole.TimeMediationFun
 import QDTBlackHole.EnergyDynamics
+import QDTBlackHole.ActivityBounds
 
 /-!
 # Concrete Parameter Validation
@@ -146,5 +147,55 @@ theorem energy_conservation_bound_default (tau1 tau2 : ℝ) :
 theorem qt_lt_one_default {tau_val : ℝ} (htau : tau_val ≠ 0) :
     quantumTunneling tau_val alpha_default < 1 :=
   quantumTunneling_lt_one_of_ne_zero htau alpha_default_pos
+
+/-! ## Activity bounds for the default 10-prime basis -/
+
+/-- The first 10 primes (as reals), matching `n_primes = 10` in the Python simulation. -/
+def primes_default : List ℝ := [2, 3, 5, 7, 11, 13, 17, 19, 23, 29]
+
+/-- All default primes are ≥ 1. -/
+lemma primes_default_ge_one : ∀ p ∈ primes_default, (1 : ℝ) ≤ p := by
+  decide
+
+/-- All default primes are ≥ 2 (the smallest prime). -/
+lemma primes_default_ge_two : ∀ p ∈ primes_default, (2 : ℝ) ≤ p := by
+  decide
+
+/-- The default prime list has length 10. -/
+lemma primes_default_length : primes_default.length = 10 := by
+  decide
+
+/-- **Sup bound for the default simulation**: for `t ≥ 0`,
+    `|τ(t)| ≤ 10` (the number of primes used in the Python simulation). -/
+theorem tau_sup_le_ten_default {T0 omega0 : ℝ} (hT0 : 0 < T0) {t : ℝ} (ht : 0 ≤ t) :
+    |tauFunction primes_default T0 omega0 t| ≤ 10 := by
+  have h := tauFunction_sup_le_nprimes primes_default hT0 ht primes_default_ge_one
+  rw [primes_default_length] at h
+  exact_mod_cast h
+
+/-- **Decay envelope for the default simulation**: for `t ≥ 0`,
+    `|τ(t)| ≤ 10 * 2^(−t/T₀)`  (using `p_min = 2`, the smallest prime). -/
+theorem tau_activity_decay_default {T0 omega0 : ℝ} (hT0 : 0 < T0) {t : ℝ} (ht : 0 ≤ t) :
+    |tauFunction primes_default T0 omega0 t| ≤ 10 * (2 : ℝ) ^ (-t / T0) := by
+  have h := tauFunction_activity_decay primes_default hT0 ht
+    (by norm_num : (0 : ℝ) < 2) primes_default_ge_two
+  rw [primes_default_length] at h
+  exact_mod_cast h
+
+/-! ## AM-GM and duality balance for default parameters -/
+
+/-- With default parameters, `Q_t · G_f ≤ (E_total/2)²` for all τ.
+    Validates the AM-GM product bound from the energy duality picture. -/
+theorem energy_amgm_default (tau_val : ℝ) :
+    quantumTunneling tau_val alpha_default * gravitationalFunneling tau_val beta_default ≤
+    (totalEnergy tau_val alpha_default beta_default / 2) ^ 2 :=
+  totalEnergy_amgm tau_val alpha_default_nonneg beta_default_pos
+
+/-- With default parameters, there exists a **duality balance point** `τ₀ ≥ 0`
+    where `E_total(τ₀) = 1`.
+    This validates the Python observation that `mean_energy ≈ 1`. -/
+theorem energy_balance_exists_default :
+    ∃ τ₀ : ℝ, 0 ≤ τ₀ ∧ totalEnergy τ₀ alpha_default beta_default = 1 :=
+  totalEnergy_exists_eq_one alpha_default_pos beta_default_pos
 
 end QDTBlackHole

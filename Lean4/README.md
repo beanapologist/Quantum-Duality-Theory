@@ -17,6 +17,7 @@ Lean4/
     ├── GravitationalFunneling.lean  # Proofs for G_f(τ, β) = 1/(1+β·τ²)
     ├── TimeMediationFun.lean   # Proofs for τ(t) = Σ p^(−t/T₀)·cos(ω₀t/p)
     ├── EnergyDynamics.lean     # Proofs for E_total = Q_t + G_f
+    ├── ActivityBounds.lean     # Sup bound, decay envelope, AM-GM, IVT balance
     └── Validation.lean         # Concrete instantiation with Python defaults
 ```
 
@@ -82,20 +83,36 @@ Lean4/
 | `totalEnergy_variation_lt_two`   | `|E(τ₁) − E(τ₂)| < 2` (energy conservation bound)  |
 | `totalEnergy_even`               | E_total is an even function of τ                    |
 
+### Activity bounds and energy balance (`ActivityBounds.lean`)
+
+| Theorem                             | Mathematical statement                                    |
+|-------------------------------------|-----------------------------------------------------------|
+| `tauFunction_sup_le_nprimes`        | `|τ(t)| ≤ n` for t ≥ 0, primes ≥ 1, T₀ > 0              |
+| `tauFunction_activity_decay`        | `|τ(t)| ≤ n * p_min^(−t/T₀)` (exponential decay envelope)|
+| `totalEnergy_amgm`                  | `Q_t · G_f ≤ (E_total/2)²` (AM-GM product bound)         |
+| `quantumTunneling_continuous`       | Q_t continuous in τ                                       |
+| `gravitationalFunneling_continuous` | G_f continuous in τ                                       |
+| `totalEnergy_continuous`            | E_total continuous in τ                                   |
+| `totalEnergy_exists_eq_one`         | `∃ τ₀, 0 ≤ τ₀ ∧ E_total(τ₀) = 1` (duality balance, IVT) |
+
 ### Concrete validation with Python defaults (α = 0.5, β = 0.3, mass = 10)
 
-| Lemma                            | Python equivalent                             |
-|----------------------------------|-----------------------------------------------|
-| `qt_at_zero_default`             | `quantum_tunneling(0) == 1.0`                 |
-| `gf_at_zero_default`             | `gravitational_funneling(0) == 1.0`           |
-| `total_energy_at_zero_default`   | `total_energy(t=0)` ≡ `(2.0, 1.0, 1.0)`     |
-| `qt_bounded_default`             | `0 < qt ≤ 1` for all τ                        |
-| `gf_bounded_default`             | `0 < gf ≤ 1` for all τ                        |
-| `energy_bounded_default`         | `0 < e_total ≤ 2` for all τ                   |
-| `T0_default_pos`                 | `T0(10) > 0`                                  |
-| `T0_omega0_default`              | `T0(10) * omega0(10) = 1`                     |
-| `energy_conservation_bound_default` | `e_conservation < 2` (Python `analyze`)   |
-| `qt_lt_one_default`              | `qt < 1` for any τ ≠ 0                        |
+| Lemma                               | Python equivalent                             |
+|-------------------------------------|-----------------------------------------------|
+| `qt_at_zero_default`                | `quantum_tunneling(0) == 1.0`                 |
+| `gf_at_zero_default`                | `gravitational_funneling(0) == 1.0`           |
+| `total_energy_at_zero_default`      | `total_energy(t=0)` ≡ `(2.0, 1.0, 1.0)`      |
+| `qt_bounded_default`                | `0 < qt ≤ 1` for all τ                        |
+| `gf_bounded_default`                | `0 < gf ≤ 1` for all τ                        |
+| `energy_bounded_default`            | `0 < e_total ≤ 2` for all τ                   |
+| `T0_default_pos`                    | `T0(10) > 0`                                  |
+| `T0_omega0_default`                 | `T0(10) * omega0(10) = 1`                     |
+| `energy_conservation_bound_default` | `e_conservation < 2` (Python `analyze`)       |
+| `qt_lt_one_default`                 | `qt < 1` for any τ ≠ 0                        |
+| `tau_sup_le_ten_default`            | `|τ(t)| ≤ 10` for t ≥ 0 (10-prime default)   |
+| `tau_activity_decay_default`        | `|τ(t)| ≤ 10 * 2^(−t/T₀)` (decay envelope)   |
+| `energy_amgm_default`               | `Q_t · G_f ≤ (E_total/2)²` with defaults      |
+| `energy_balance_exists_default`     | `∃ τ₀, E_total(τ₀) = 1` with defaults         |
 
 ## Building and checking
 
@@ -128,7 +145,7 @@ directly; it will compile Mathlib from source (this takes ~1 hour).
 
 ```bash
 cd Lean4
-lean QDTBlackHole/QuantumTunneling.lean
+lean QDTBlackHole/ActivityBounds.lean
 ```
 
 ## Design decisions

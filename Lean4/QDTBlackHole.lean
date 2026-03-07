@@ -6,4 +6,5 @@ import QDTBlackHole.QuantumTunneling
 import QDTBlackHole.GravitationalFunneling
 import QDTBlackHole.TimeMediationFun
 import QDTBlackHole.EnergyDynamics
+import QDTBlackHole.ActivityBounds
 import QDTBlackHole.Validation
